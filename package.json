@@ -1,0 +1,40 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "traffic-app",
+  "version": "0.0.1",
+  "description": "Traffic lights",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "dependencies": {
+    "assert": "^1.4.1",
+    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "debug": "^2.2.0",
+    "expect": "^1.20.2",
+    "express": "^5.0.0-alpha.2",
+    "mocha": "^3.1.2",
+    "nunjucks": "^2.5.2",
+    "request": "^2.75.0",
+    "socket.io": "^1.5.0",
+    "sqlite3": "^3.1.6",
+    "webpage": "^0.3.0",
+    "winston": "^2.2.0"
+  },
+  "engines": {
+    "node": "4.4.3"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "license": "MIT"
+}
