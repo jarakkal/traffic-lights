@@ -1,8 +1,8 @@
-### traffic-lights 
+# traffic-lights 
 
 Simulating a set of traffic lights at an intersection
 
-##Requirements
+## Requirements
 
 The traffic lights are designated (N, S) and (E, W) like a compass.
 
@@ -29,15 +29,12 @@ You need Node.js and npm.
     "socket.io": "^1.5.0",
     "sqlite3": "^3.1.6"
 
-##Testing
+## Testing
 
 `npm test`, to run tests defined in the test folder.
 
-## Constraints
 
-* The traffic lights are designated (N, S) and (E, W) like a compass.
-
-#Execution
+## Execution
 
 1. Click on the 'Start traffic control' button to start.
 2. Click on 'Get traffic info between 09:00:00 and 09:30:00' to see the output if any.
