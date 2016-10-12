@@ -8,7 +8,7 @@ var lights = function(){
     self.updateLights = function(params,seconds,next){
         setTimeout(function(){
             if(seconds > 0){
-                var logMsg = config.traffic.lights[+params.id-1].title+" traffic light updated to "+params.addCol;
+                var logMsg = "Going to update "+config.traffic.lights[params.id-1].title+" traffic light to "+params.addCol;
                 self.log(logMsg);
             }
             return next(params);
@@ -20,8 +20,7 @@ var lights = function(){
         self.updateLights(appStat,0,function(){
             appStat = {id:lightID,addCol:'green',remCol:'red,yellow'};
             self.updateLights(appStat,update_after,function(){
-                console.log("light id green "+lightID);
-                var logMsg = "Going to update "+config.traffic.lights[lightID-1].title+" traffic light to "+appStat.addCol;
+                var logMsg = config.traffic.lights[+lightID-1].title+" traffic light updated to "+appStat.addCol;
                 self.log(logMsg);
                 return next(appStat);
             });
@@ -33,7 +32,7 @@ var lights = function(){
         self.updateLights(appStat,0,function(){
             appStat = {id:lightID,addCol:'red',remCol:'green,yellow'};
             self.updateLights(appStat,update_after,function(err){
-                var logMsg = "Going to update "+config.traffic.lights[lightID-1].title+" traffic light to "+appStat.addCol;
+                var logMsg = config.traffic.lights[+lightID-1].title+" traffic light updated to "+appStat.addCol;
                 self.log(logMsg);
                 return next(appStat);  
             });
@@ -41,9 +40,10 @@ var lights = function(){
     }
     //add record to sqlite
     self.log = function(logMsg){
-        logs.add(logMsg);
-        console.log(logMsg);
-        return true;
+        logs.add(logMsg,function(err,logID){
+            //console.log(logMsg+", "+logID);
+            return true;
+        });
     }
 }
 
